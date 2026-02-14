@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request, Response
 
 app = Flask(__name__, template_folder="templates")
+app.json.ensure_ascii = False
+
 
 produse = [
     {"id": 1, "nume": "Laptop", "pret": 3000},
