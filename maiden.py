@@ -20,29 +20,45 @@ produse = [
     {"id": 13, "nume": "Fier de călcat", "pret": 350},
     {"id": 14, "nume": "Televizor OLED", "pret": 6000},
     {"id": 15, "nume": "Laptop Gaming", "pret": 8000},
-    
 ]
+
 
 @app.route('/', methods=['GET'])
 def home():
-    return "bine ai venit la magazinul nostru"
+    return "Bine ai venit la magazinul nostru"
+
 
 @app.route('/test-diacritice', methods=['GET'])
 def test_diacritice():
-    return Response("Și ășțî - diacritice OK", content_type="text/plain; charset=utf-8")
+    return Response(
+        "Și ășțî - diacritice OK",
+        content_type="text/plain; charset=utf-8"
+    )
+
 
 @app.route('/produse', methods=['GET'])
 def get_produse():
     return jsonify({"date": produse})
 
+
 @app.route('/produse/<int:produs_id>', methods=['GET'])
 def get_produs(produs_id):
     rezultat = [p for p in produse if p["id"] == produs_id]
+
     if len(rezultat) == 0:
-        return jsonify({"error": "Produsul nu a fost găsit"}), 404
-    return jsonify(rezultat[0])
-    
+        return Response(
+            "Produsul nu a fost găsit",
+            status=404,
+            content_type="text/plain; charset=utf-8"
+        )
+
+    produs = rezultat[0]
+
+    return Response(
+        f"{produs['nume']} - {produs['pret']} lei",
+        content_type="text/plain; charset=utf-8"
+    )
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
-
