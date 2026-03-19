@@ -1,4 +1,4 @@
-produse=[
+produse = [
     {"id": 1, "nume": "Laptop", "pret": 3000},
     {"id": 2, "nume": "Telefon", "pret": 1500},
     {"id": 3, "nume": "Vinil", "pret": 200},
@@ -18,12 +18,12 @@ produse=[
     {"id": 17, "nume": "Cameră foto", "pret": 2500},
     {"id": 18, "nume": "Dronă", "pret": 3000},
     {"id": 19, "nume": "Consolă de jocuri", "pret": 3500},
-    {"id": 20, "nume": "E-reader", "pret": 800}
+    {"id": 20, "nume": "E-reader", "pret": 800},
     {"id": 21, "nume": "Boxe Bluetooth", "pret": 600},
     {"id": 22, "nume": "Router Wi-Fi", "pret": 400},
     {"id": 23, "nume": "SSD extern", "pret": 500},
     {"id": 24, "nume": "Monitor", "pret": 1200},
-    {"id": 25, "nume": "Tastatură mecanică","pret": 700},
+    {"id": 25, "nume": "Tastatură mecanică", "pret": 700},
     {"id": 26, "nume": "Mouse de gaming", "pret": 300},
     {"id": 27, "nume": "Căști wireless", "pret": 450},
     {"id": 28, "nume": "Proiector", "pret": 3500},
